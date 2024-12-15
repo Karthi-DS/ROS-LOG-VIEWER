@@ -109,7 +109,7 @@ function Ros() {
             className="flex items-center bg-green-600 font-bold text-white border-2 border-gray-400 px-4 py-2 rounded-full"
           >
             <img
-              src="http://localhost:3000/fileIcon.png"
+              src="/fileIcon.png"
               className="mx-2"
               width={25}
               height={10}
@@ -117,7 +117,6 @@ function Ros() {
             ></img>
             Actions
           </button>
-          {/* Dropdown Menu */}
           {dropdownVisible && (
             <>
               <div 
@@ -127,7 +126,7 @@ function Ros() {
               <ul className="absolute mt-2 bg-white shadow-lg rounded-md border border-gray-200 z-20">
                 <div className="flex items-center text-white font-semibold  bg-green-400 hover:bg-green-300 border-b-2">
                   <img
-                    src="http://localhost:3000/download.png"
+                    src="/upload.png"
                     className="mx-2"
                     width={25}
                     height={10}
@@ -151,7 +150,7 @@ function Ros() {
                   <>
                   <div className="flex items-center text-white font-semibold  bg-red-400 hover:bg-red-300 border-b-2">
                   <img
-                    src="http://localhost:3000/delete.png"
+                    src="/delete.png"
                     className="mx-2"
                     width={25}
                     height={10}
@@ -165,7 +164,7 @@ function Ros() {
                     </li>
                 </div><div className="flex items-center text-white font-semibold  bg-gray-400 hover:bg-gray-300">
                   <img
-                    src="http://localhost:3000/download.png"
+                    src="/download.png"
                     className="mx-2"
                     width={25}
                     height={10}
@@ -184,8 +183,11 @@ function Ros() {
             </>
           )}
         </div>
-        {/* Loading or Table */}
-        {loading ? "loading" : <Table data={tableData} ref={tableRef}></Table>}
+        {loading ?
+        <div className="flex justify-center font-bold">
+         loading...
+        </div>
+          : <Table data={tableData} ref={tableRef}></Table>}
       </div>
     </div>
   );
